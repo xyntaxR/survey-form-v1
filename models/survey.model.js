@@ -5,6 +5,7 @@ const Constants 			= require('../config/constants');
 class SurveyModel extends Model {
 	constructor() {
 		super();
+		this.captcha = null;
 	}
 
 	async getSurvey() {
@@ -43,7 +44,14 @@ class SurveyModel extends Model {
 		await this.executeQuery(insert_survey_query);
 	}
 
-	// add the other necessary methods
+	// supply the logic for each function:
+	generateCaptcha(){
+		return ""; 
+	}
+
+	verifyCaptchaInput(input){
+		return ""; 
+	}
 }
 
 module.exports = SurveyModel;
